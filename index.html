@@ -9,6 +9,9 @@
       content="Savon beldi, huile d'argan pure, lipstick de Fès et soins naturels doux. Fait main au Maroc. Commandez sur WhatsApp."
     />
     <meta name="theme-color" content="#0e241a" />
+    <!-- GEO: location hints for local search (TODO: confirm her city) -->
+    <meta name="geo.region" content="MA" />
+    <meta name="geo.placename" content="Tanger" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="https://green-biocosmetics.vercel.app/" />
     <link rel="preload" as="font" type="font/woff2" href="/fonts/fraunces-latin-wght-normal.woff2" crossorigin />
@@ -36,8 +39,34 @@
         "url": "https://green-biocosmetics.vercel.app",
         "image": "https://green-biocosmetics.vercel.app/og-logo.jpg",
         "telephone": "+212723293972",
-        "address": { "@type": "PostalAddress", "addressCountry": "MA" },
-        "sameAs": ["https://instagram.com/green.biocosmetics"]
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tanger",
+          "addressCountry": "MA"
+        },
+        "areaServed": "MA",
+        "currenciesAccepted": "MAD",
+        "paymentAccepted": "Cash, Cash on delivery, Bank transfer",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "09:00",
+            "closes": "20:00"
+          }
+        ],
+        "sameAs": ["https://instagram.com/green.biocosmetics"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Natural cosmetics",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Savon Beldi & Kessa" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Fez Lipstick" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pure Argan Oil" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Hair Ritual — Ghassoul & Oils" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Soothing Face Cream" } }
+          ]
+        }
       }
     </script>
   </head>
