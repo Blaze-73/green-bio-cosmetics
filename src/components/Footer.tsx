@@ -19,7 +19,7 @@ export function Footer() {
     <footer className="bg-pine text-cream">
       <div className="container-gutter grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <Link to="/" className="inline-block" aria-label="GREEN Bio Cosmetics — home">
+          <Link to="/" className="inline-block">
             <span className="font-display text-3xl font-semibold text-blush">Green</span>
             <span className="mt-1 block text-[10px] uppercase tracking-[0.4em] text-cream/60">bio cosmetics</span>
           </Link>
@@ -77,7 +77,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-cream/10">
-        <div className="container-gutter flex flex-col items-center justify-between gap-3 py-6 text-xs text-cream/40 sm:flex-row">
+        <div className="container-gutter flex flex-col items-center justify-between gap-3 py-6 text-xs text-cream/70 sm:flex-row">
           <p>
             © {year} {SITE.name}. {t("footer.rights")}
           </p>

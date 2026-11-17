@@ -10,7 +10,6 @@ import { Marquee } from "../components/Marquee"
 import { CtaBand } from "../components/CtaBand"
 import { usePageMeta } from "../hooks/usePageMeta"
 import { ArrowIcon, LeafIcon, WhatsAppIcon } from "../components/icons"
-import heroImg from "../assets/images/hero.jpg"
 import aboutImg from "../assets/images/about.jpg"
 
 /** Headline that rises word by word from behind a mask */
@@ -111,7 +110,7 @@ export function Home() {
             className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-none"
           >
             <div className="aspect-[4/5]">
-              <PhotoFrame src={heroImg} alt={t("hero.photoAlt")} eager className="h-full" />
+              <PhotoFrame src="/img/hero.jpg" alt={t("hero.photoAlt")} eager className="h-full" />
             </div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -120,7 +119,7 @@ export function Home() {
               className="absolute -bottom-6 -left-4 rounded-2xl bg-cream px-5 py-4 text-pine shadow-xl shadow-pine/40 sm:-left-8"
             >
               <p className="font-display text-xl italic text-fern sm:text-2xl">{t("hero.cardTitle")}</p>
-              <p className="mt-0.5 text-[11px] tracking-[0.25em] text-pine/60 uppercase">{t("hero.cardTag")}</p>
+              <p className="mt-0.5 text-[11px] tracking-[0.25em] text-pine/70 uppercase">{t("hero.cardTag")}</p>
             </motion.div>
           </motion.div>
         </div>

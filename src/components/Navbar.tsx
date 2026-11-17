@@ -15,7 +15,7 @@ const links = [
 
 function Wordmark() {
   return (
-    <Link to="/" className="group inline-block" aria-label="GREEN Bio Cosmetics — home">
+    <Link to="/" className="group inline-block">
       <span className="font-display text-[1.65rem] font-semibold leading-none text-blush transition-colors group-hover:text-blush-soft">
         Green
       </span>
