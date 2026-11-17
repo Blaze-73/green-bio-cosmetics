@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — pulled from the GREEN logo */
+  --color-pine: #0e241a;
+  --color-forest: #1e3a2b;
+  --color-fern: #2c5240;
+  --color-blush: #f2b8c0;
+  --color-blush-soft: #f7d3d8;
+  --color-cream: #faf6f0;
+  --color-sand: #d9c7a7;
+
+  --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --font-body: "DM Sans Variable", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-cream font-body text-pine antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-blush text-pine;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-4 outline-blush;
+  }
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 active:scale-[0.97];
+}
+
+@layer components {
+  .container-gutter {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .btn-primary {
+    @apply btn bg-blush text-pine hover:-translate-y-0.5 hover:bg-blush-soft hover:shadow-lg hover:shadow-blush/20;
+  }
+
+  .btn-outline {
+    @apply btn border border-cream/25 text-cream hover:-translate-y-0.5 hover:border-blush hover:text-blush;
+  }
+
+  .btn-dark {
+    @apply btn bg-pine text-cream hover:-translate-y-0.5 hover:bg-forest hover:shadow-lg hover:shadow-pine/25;
+  }
+
+  .kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.3em];
+  }
+}
+
+@layer utilities {
+  /* Film-grain overlay for the whole page */
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Moroccan-arch photo frame with duotone grading */
+  .photo-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 999px 999px 1.25rem 1.25rem;
+    transform: translateZ(0);
+  }
+
+  .photo-frame > img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: saturate(0.85) contrast(1.05) brightness(0.97);
+  }
+
+  .photo-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(160deg, rgb(30 58 43 / 0.28), rgb(242 184 192 / 0.16) 65%, rgb(14 36 26 / 0.3));
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+  }
+
+  .float-slow {
+    animation: floaty 7s ease-in-out infinite;
+  }
+
+  .float-slower {
+    animation: floaty 10s ease-in-out infinite reverse;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track,
+  .float-slow,
+  .float-slower {
+    animation: none;
+  }
+}
