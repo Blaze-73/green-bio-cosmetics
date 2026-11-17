@@ -49,8 +49,8 @@ export function Home() {
     <>
       {/* ——— Hero ——— */}
       <header className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-pine text-cream">
-        <LeafIcon className="float-slow absolute -left-12 top-28 h-44 w-44 text-fern/50" />
-        <LeafIcon className="float-slower absolute -right-10 bottom-24 h-32 w-32 rotate-[70deg] text-blush/15" />
+        <LeafIcon className="float-slow absolute -left-16 top-24 hidden h-44 w-44 text-fern/40 md:block" />
+        <LeafIcon className="float-slower absolute -right-14 bottom-24 hidden h-32 w-32 rotate-[70deg] text-blush/10 md:block" />
 
         <div className="container-gutter grid items-center gap-14 py-32 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:py-20">
           <div>
@@ -119,8 +119,8 @@ export function Home() {
               transition={{ duration: 0.8, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
               className="absolute -bottom-6 -left-4 rounded-2xl bg-cream px-5 py-4 text-pine shadow-xl shadow-pine/40 sm:-left-8"
             >
-              <p className="font-display text-2xl italic text-fern">beldi · argan · ghassoul</p>
-              <p className="mt-0.5 text-[11px] tracking-[0.25em] text-pine/60 uppercase">{t("hero.badge")}</p>
+              <p className="font-display text-xl italic text-fern sm:text-2xl">{t("hero.cardTitle")}</p>
+              <p className="mt-0.5 text-[11px] tracking-[0.25em] text-pine/60 uppercase">{t("hero.cardTag")}</p>
             </motion.div>
           </motion.div>
         </div>
@@ -166,7 +166,7 @@ export function Home() {
 
       {/* ——— Story teaser ——— */}
       <section className="relative overflow-hidden bg-pine py-20 text-cream sm:py-28">
-        <LeafIcon className="float-slower absolute -left-14 bottom-10 h-48 w-48 text-fern/40" />
+        <LeafIcon className="float-slower absolute -left-16 bottom-10 hidden h-48 w-48 text-fern/40 lg:block" />
         <div className="container-gutter grid items-center gap-14 lg:grid-cols-2">
           <Reveal className="relative order-2 mx-auto w-full max-w-xs sm:max-w-sm lg:order-1 lg:max-w-md">
             <PhotoFrame src={aboutImg} alt={t("about.photoAlt")} className="aspect-[4/5]" />

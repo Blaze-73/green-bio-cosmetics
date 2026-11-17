@@ -46,6 +46,15 @@ export function Navbar() {
     }
   }, [open])
 
+  // Escape closes the mobile menu
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false)
+    }
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [])
+
   return (
     <>
       <motion.nav

@@ -1,32 +1,29 @@
-# React + TypeScript + Vite
+# GREEN Bio Cosmetics
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Frontend-only website for a Moroccan natural cosmetics brand (savon beldi, Fez lipstick, argan oil, ghassoul hair rituals, soothing skincare).
 
-Currently, two official plugins are available:
+**Stack:** Vite · React 19 · TypeScript · Tailwind CSS 4 · Framer Motion · react-i18next (FR default / EN)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Run locally
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build in dist/
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Where to edit things
+
+| What | Where |
+|---|---|
+| Phone / WhatsApp / Instagram / domain | `src/config.ts` |
+| Products (add, remove, rename) | `src/data/products.ts` + `products.items` in `src/locales/en.ts` & `src/locales/fr.ts` |
+| All copy (French & English) | `src/locales/` |
+| Colors, fonts, arch frames, grain | `src/index.css` |
+
+## Notes
+
+- Ordering happens through WhatsApp deep links with prefilled messages — there is no backend, no form, no data collection.
+- Images in `src/assets/images/` are temporary stock placeholders (Unsplash) — replace with real product photos.
+- SEO: per-page meta via `usePageMeta`, JSON-LD business schema in `index.html`, `sitemap.xml` / `robots.txt` in `public/`.
+- Security: CSP + hardening headers in `vercel.json`. Deploy on Vercel — nothing else to configure.

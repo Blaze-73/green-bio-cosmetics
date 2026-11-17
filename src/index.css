@@ -137,7 +137,8 @@
   }
   .marquee-track,
   .float-slow,
-  .float-slower {
+  .float-slower,
+  .animate-ping {
     animation: none;
   }
 }

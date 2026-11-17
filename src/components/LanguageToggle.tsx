@@ -6,7 +6,7 @@ function ToggleButton({ code, label, dark }: { code: "fr" | "en"; label: string;
     <button
       onClick={() => i18n.changeLanguage(code)}
       aria-pressed={active}
-      className={`rounded-full px-2.5 py-1 text-xs font-semibold tracking-wide transition-colors ${
+      className={`rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide transition-colors ${
         active
           ? dark
             ? "bg-blush text-pine"

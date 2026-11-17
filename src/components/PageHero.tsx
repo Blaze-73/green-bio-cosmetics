@@ -12,8 +12,8 @@ export function PageHero({ kicker, title, sub }: PageHeroProps) {
   const reduce = useReducedMotion()
   return (
     <header className="relative overflow-hidden bg-pine pb-16 pt-36 text-cream sm:pb-24 sm:pt-44">
-      <LeafIcon className="float-slow absolute -right-10 top-24 h-40 w-40 rotate-45 text-fern/50" />
-      <LeafIcon className="float-slower absolute -left-12 bottom-0 h-56 w-56 -rotate-12 text-fern/30" />
+      <LeafIcon className="float-slow absolute -right-16 top-20 hidden h-40 w-40 rotate-45 text-fern/40 md:block" />
+      <LeafIcon className="float-slower absolute -left-20 bottom-0 hidden h-56 w-56 -rotate-12 text-fern/30 md:block" />
       <div className="container-gutter">
         <motion.p
           initial={{ opacity: 0, y: reduce ? 0 : 20 }}
